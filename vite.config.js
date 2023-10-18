@@ -6,6 +6,9 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  test: {
+    globals: true
+  },
   plugins: [
     vue(),
     VitePWA({
@@ -25,7 +28,7 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ["**/*.{js,css,html,png,jpg,}"]
+        globPatterns: ['**/*.{js,css,html,png,jpg,}']
       }
     })
   ],

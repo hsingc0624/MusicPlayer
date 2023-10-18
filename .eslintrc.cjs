@@ -11,7 +11,18 @@ module.exports = {
   overrides: [
     {
       files: ['cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}'],
-      extends: ['plugin:cypress/recommended']
+      extends: ['plugin:cypress/recommended'],
+    },
+    {
+      files: ["src/components/__test__/**.spec.js"],
+      globals: {
+        test: "readonly",
+        describe: "readonly",
+        expect: "readonly",
+        vi: "readonly",
+        beforeEach: "readonly",
+        it: "readonly"
+      }
     }
   ],
   parserOptions: {
